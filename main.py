@@ -34,7 +34,7 @@ def buscar():
     for linea in busqueda:
         print(linea)
 
-def estadísticas_basicas():
+def estadisticas_basicas():
     print("\n--- ESTADÍSTICAS BÁSICAS ---")
     print("Ingrese un número de acuerdo a la columna que desea analizar:")
     print("0: Embarazos")
@@ -76,7 +76,7 @@ def estadísticas_basicas():
 
 
 
-def flitro():
+def filtro():
     filtro = []
     print('Digite el numero de acuerdo a la columna la que desea filtrar: ')
     print("0: Embarazos")
@@ -89,15 +89,15 @@ def flitro():
     print("7: Edad")
     print("8: Resultado")
     x = int(input())
-    if x in [0, 1, 2, 3, 4,5 ,6 7, 8]
+    if x in [0, 1, 2, 3, 4,5 ,6, 7, 8]:
         y = int(input('Digite desde que valor desea filtrar: '))
         for fila in mis_datos:
-            if fila[x] > y:
+            if float(fila[x]) > y:
                 filtro.append(fila)
     else:
         print('Digite un numero valido')
         filtro()
-    filtro.sort(key=lambda a, a[x])
+    filtro.sort(key=lambda a: float(a[x]))
     print(f'Se filtraron {len(mis_datos)-len(filtro)} resultados')
     for linea in filtro:
         print(linea)
@@ -117,7 +117,7 @@ def menu_interactivo():
                 buscar()
             case 2:
                 print("Elegiste ESTADÍSTICAS BÁSICAS")
-                estadísticas_basicas()
+                estadisticas_basicas()
             case 3:
                 print("Elegiste FILTRAR POR CONDICIÓN")
                 filtro()
@@ -129,5 +129,3 @@ def menu_interactivo():
 
 
 menu_interactivo()
-
-
